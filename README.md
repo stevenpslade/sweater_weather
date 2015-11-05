@@ -1,10 +1,10 @@
-Sinatra
+Sweater Weather
 =============
 
-Brought to you by Lighthouse Labs
+Brought to you by Steven Slade
 
-## Getting Started
+## About this web app
 
-1. `bundle install`
-2. `shotgun -p 3000 -o 0.0.0.0`
-3. Visit `http://localhost:3000/` in your browser
+Sweater weather is a sinatra based single-page, web app using JavaScript and AJAX.
+
+This SPA leverages the wunderground weather API. It displays the current weather of a searched location as a 'what to wear in this weather'. The user can also choose to see the actual weather in number format.
