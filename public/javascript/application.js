@@ -20,8 +20,18 @@ $(function() {
     var wind = data.wind_kph; //number
     var feelsLike = data.feelslike_c; //string
     var icon = data.icon_url; //link to image
+    var garment;
+    feelsNum = parseInt(feelsLike, 10);
+    if (feelsNum < 10) {
+      garment = 'images/sweater.jpg';
+    } else {
+      garment = 'images/jumpsuit.jpeg';
+    }
     $('<h2>')
-    .text(temp + 'C')
+    .text('Feels like: ' + feelsLike + 'C')
+    .append($('<img>')
+      .attr('src', garment)
+      .fadeIn(1000))
     .appendTo('#current');
   }
 
