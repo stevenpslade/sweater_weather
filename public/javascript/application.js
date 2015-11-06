@@ -27,7 +27,7 @@ $(function() {
     } else {
       garment = 'images/jumpsuit.jpeg';
     }
-    $('<h2>')
+    $('<h4>')
     .text('Feels like: ' + feelsLike + 'C')
     .append($('<img>')
       .attr('src', garment)
@@ -41,7 +41,7 @@ $(function() {
       url: 'http://autocomplete.wunderground.com/aq?query=' + userSearch,
       method: 'GET',
       dataType: 'jsonp',
-      jsonp:    "cb",
+      jsonp:    'cb',
       success:  function (data) {
         $('#searchResults').empty();
         var i;
@@ -50,12 +50,12 @@ $(function() {
           appendResults(city);
         }
       }
-    })
+    });
     return false;
-  })
+  });
 
   $('#searchResults').on('click', 'button.showWeather', function() {
-    var apiLink = $(this).data("link") + '.json';
+    var apiLink = $(this).data('link') + '.json';
     $.ajax({
       url: 'http://api.wunderground.com/api/3e541a2c882e2d33/conditions/' + apiLink,
       method: 'GET',
@@ -67,7 +67,7 @@ $(function() {
         data = data.current_observation;
         appendWeather(data);
       }
-    })
-  })
+    });
+  });
 
 });
